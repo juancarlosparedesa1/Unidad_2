@@ -2,7 +2,10 @@ package com.example.demo.uce.modelo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 //metadata especificamente anotaciones
@@ -18,11 +21,18 @@ public class Estudiante {
 	
 	//represernta objetos como un objeto de la realidad
 	@Id
+	//secuencias
+	//@SequenceGenerator(name="estu_seq",sequenceName"estu_seq",allocationSize =1);
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator ="estu_seq");
+	@SequenceGenerator(name="estu_seq",sequenceName"estu_seq",allocationSize =1);
 	@Column(name="estu_id")
 	private Integer id;
 	
 	@Column(name="estu_nombre")
 	private String nombre;//estu_nombre error el objeto estudiante tiene un atributo nomcreprivate String apellido;
+	
+	@Column(name="estu_apellido")
+	private String apellido;//estu_nombre error el objeto estudiante tiene un atributo nomcreprivate String apellido;
 	
 	@Column(name="estu_genero")
 	private String genero;
