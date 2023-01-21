@@ -5,6 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.example.demo.uce.modelo.Ciudadano;
+import com.example.demo.uce.modelo.Empleado;
 import com.example.demo.uce.modelo.Estudiante;
 import com.example.demo.uce.service.IEstudianteService;
 
@@ -30,10 +32,18 @@ public class ProyectoPaU2Jp1Application implements CommandLineRunner {
 		estu.setCedula("132455544");
 		estu.setCiudad("Quito");
 		estu.setGenero("M");
-		this.estudianteService.agregar(estu);
-		
 		estu.setCiudad("Guayaquil");
+		this.estudianteService.agregar(estu);
 		//this.estudianteService.modificar(estu);
+		
+		 Ciudadano ciu = new Ciudadano();
+		 ciu.setNombre("juan");
+		 ciu.setApellido("paredes");
+		 
+		 Empleado empl = new Empleado();
+		 
+		
+	
 	}
 
 }
