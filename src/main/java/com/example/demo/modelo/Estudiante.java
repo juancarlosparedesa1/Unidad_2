@@ -28,7 +28,7 @@ public class Estudiante {
 
 	// mapeo de unao a uno
 	@OneToOne(mappedBy = "estudiante", cascade = CascadeType.ALL) //
-	private Curso estudiante;
+	private Representante representante;
 
 	
 	//getters and setters
@@ -56,23 +56,20 @@ public class Estudiante {
 		this.apellido = apellido;
 	}
 
-	public Curso getEstudiante() {
-		return estudiante;
+	public Representante getRepresentante() {
+		return representante;
 	}
 
-	public void setEstudiante(Curso estudiante) {
-		this.estudiante = estudiante;
+	public void setRepresentante(Representante representante) {
+		this.representante = representante;
 	}
 
-	// to string
 	@Override
 	public String toString() {
-		return "Estudiante [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", estudiante=" + estudiante
-				+ "]";
+		return "Estudiante [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", representante="
+				+ representante + "]";
 	}
-
 	
 	
-
 	
 }

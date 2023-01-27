@@ -1,7 +1,6 @@
 package com.example.demo.modelo;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+
 
 import org.hibernate.annotations.JavaType;
 
@@ -17,22 +16,22 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "curso")
-public class Curso {
+@Table(name = "representante")
+public class Representante {
 	@Id // pk
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_curso")
-	@SequenceGenerator(name = "seq_curso", sequenceName = "seq_curso", allocationSize = 1)
-	@Column(name = "curs_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_repres")
+	@SequenceGenerator(name = "seq_repres", sequenceName = "seq_repres", allocationSize = 1)
+	@Column(name = "cont_id")
 	private Integer id;
 
-	@Column(name = "curs_asignatura")
-	private String asignatura;
+	@Column(name = "cont_ciudad")
+	private String ciudad;
 
-	@Column(name = "curs_duracion")
-	private String duracion;
+	@Column(name = "cont_telefono")
+	private String telefono;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "estu_id_curso")
+	@JoinColumn(name = "estu_id_repres")
 	private Estudiante estudiante;
 
 	
@@ -45,20 +44,20 @@ public class Curso {
 		this.id = id;
 	}
 
-	public String getAsignatura() {
-		return asignatura;
+	public String getCiudad() {
+		return ciudad;
 	}
 
-	public void setAsignatura(String asignatura) {
-		this.asignatura = asignatura;
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
 	}
 
-	public String getDuracion() {
-		return duracion;
+	public String getTelefono() {
+		return telefono;
 	}
 
-	public void setDuracion(String duracion) {
-		this.duracion = duracion;
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
 	public Estudiante getEstudiante() {
@@ -72,10 +71,14 @@ public class Curso {
 	//to string
 	@Override
 	public String toString() {
-		return "Curso [id=" + id + ", asignatura=" + asignatura + ", duracion=" + duracion + ", estudiante="
+		return "Representante [id=" + id + ", ciudad=" + ciudad + ", telefono=" + telefono + ", estudiante="
 				+ estudiante + "]";
 	}
 
+	
+	
+
+	
 	
 	
 
